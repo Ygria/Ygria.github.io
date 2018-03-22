@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/读木心/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygria">
@@ -273,8 +273,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/31/读木心/" itemprop="url">
-                  读木心
+                <a class="post-title-link" href="/2018/03/22/docker/" itemprop="url">
+                  Docker
                 </a>
               
             
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T16:26:39+08:00">
-                2018-01-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T18:24:23+08:00">
+                2018-03-22
               </time>
             
 
@@ -328,9 +328,20 @@
       
         
           
-            <p>　　木心先生的作品，在没正式翻开之前就有接触。<br>　　最开始是听说他的诗——《从前慢》，各处援引，出现在微博营销号、网易云评论和明信片上，后来又是读到他的诗，《我纷纷的情欲》，只觉得用词漂亮漂亮，“满涵温度”。后来则是读了《上海赋》，非常酣畅流利的文章，摹写形状、声色莫不栩栩如生。常常会想到画家写文另有优势，因其审美超越常人，能写得更加色彩浓艳、生机勃勃。
-　　</p>
-<h3 id="1-《鱼丽之宴》"><a href="#1-《鱼丽之宴》" class="headerlink" title="1. 《鱼丽之宴》"></a>1. 《鱼丽之宴》</h3><p>　　介绍说是木心先生的文艺问答录，而其中最让我警醒的是 </p>
+            <p>常见指令：<br>docker images 查看已经安装了的镜像<br>docker ps -a 列出所有正在运行的容器<br>docker stop<br>sudo docker exec -it containerID /bin/bash</p>
+<p>linux –mount指令 挂载文件系统之外的</p>
+<p>容器互联：<br>① –link<br>②docker<br>将容器加入自定义的Docker网络，连接多个容器，</p>
+<p>Docker ：开源项目</p>
+<p>1、定义<br>基于Linux内核，对进程进行封装和隔离，属于操作系统层面的虚拟化技术，在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。</p>
+<p>2、优势</p>
+<p>3、Docker 基本概念：</p>
+<p>镜像（ Image ）<br>容器 （ Container ）<br>仓库 （ Repository ）</p>
+<p>概述：容器之于镜像，如同实例之于类，为镜像生成了一个实例。</p>
+<p>4、定制Dockerfile：</p>
+<p>定制镜像<br>第一行：基础</p>
+<p>FROM    scratch：以什么为基础镜像，若为scratch意味着不以任何镜像为基础。</p>
+<p>二、容器</p>
+<p>若不使用-d，容器会将输出的结果（STDOUT）打印到宿主机上。<br>如果使用了-d参数运行容器，容器会在后台运行，并不会把</p>
 
           
         
@@ -449,127 +460,8 @@
         
           
             <h2 id="House-M-D"><a href="#House-M-D" class="headerlink" title="House.M.D"></a>House.M.D</h2><p>　　快要看完《豪斯医生》了。<br>　　八季电视剧几乎是连续在看，还剩几集，可能看完后过一阵子会重头再看一遍——内心非常惆怅：要再过多久，才能遇到这样一个极其丰富、极具魅力的男主角啊！<br>　　豪斯常说两句话，一句是人人都撒谎，一句是人永远也不会变。如果说前一句是他对人性的洞察，后一句则更像是一句宣言：豪斯永远是豪斯，以自己固有的自毁、自傲、玩世不恭、保存自我，不存心获得理解也不期待理解，交付给世界的，唯有一点轻蔑。<br>　　整整八季都在说他，他也一直都没有任何改变，变得更丰富的只是他的经历，像从不同角度去窥探他原本就复杂多元的灵魂。佐证除了他出狱时威尔逊说的那句“你一点也没变”，还有别人问起豪斯腿没有残疾时是什么样，得到的回答也是“和现在没有什么区别”。这是他的痛苦之源，亦是魅力所在。<br>　　我看剧太容易真情实感，一方面是因为一开始就很喜欢豪斯，另一方面则是因为编剧非常善于使用对比和转折手法——室内春光融融，人人欢聚喜气洋洋，室外是大雪纷飞，豪斯独自伫立观望，然后缓缓走开。聚会热闹非凡，豪斯独自在浴缸里喝酒。一边是欢庆圣诞，一边是豪斯独自弹着旧钢琴。——这种孤独当然魅力十足。<br>　　转折也来得冷酷锐利，让人猝不及防：豪斯恢复了双腿，小孩儿一样玩滑板，下一瞬就是他腿又痛了，从滑板上走下来，忧心忡忡地扶着膝盖。豪斯以为自己终于得遂所愿，获得了真爱，转眼却发现一切不过是幻梦，爱人的口红是自己的药瓶。他遇到了心爱的姑娘，弹钢琴时交换着深情脉脉的眼神，随即自己不慎害得重伤的病人躺在轮椅上被推进房间……一切温情欢乐的瞬间都短暂，而疼痛来势汹汹，阴魂不散，是人生缠绕不去的底色。<br>　　豪斯常常被称赞、被感谢——因其绝顶聪明的头脑、极其优秀的专业能力——甚至被称颂为神明。可是哪一种神明会这样毫不吝惜地展露狼狈与伤痛？他一直就满身尘埃，无需他人将他从云端推落。无神主义者该去憎恶哪一种天道？该去祈求哪一路神灵？当他能听出安慰的虚伪，洞穿社交虚伪的本质，又怎能期待从中获得安慰？<br>　　可能正是因为看得太透彻，才让豪斯面对感情时幼稚消极：一开始不去获得，就无所谓失去，像是看见熊熊的炉火，虽然想靠近被温暖，但怕被火灼伤，所以干脆不靠近，也不承认想靠近。他所处的很多困境从旁观者看来都并非死局，甚至很多不幸压根都是他自己亲手造成的，只需要稍作妥协，就可以顺利摆脱。<br>　　但豪斯决不妥协，决不改变。将怜悯加诸豪斯更像是一种轻蔑和侮辱，我只是一个动情而无助的观众，唯一的选择是看着他按照自己选择的道路走下去。<br>　　一直都喜欢移情和类比，但是豪斯世无其二。</p>
-<h2 id="银翼杀手2049"><a href="#银翼杀手2049" class="headerlink" title="银翼杀手2049"></a>银翼杀手2049</h2><p>　　万圣节晚上去看的电影，本以为是一部爆米花，却没想到是非常晦涩压抑的科幻文艺片。没有了解过前作，不免觉得压抑无聊。<br> 　　因为才看完《电影批评》，所以看的时候特别留意画面与配乐，画面带着宏大的荒凉感，高度文明却毫无生机，漫无边际的滂沱雨幕，光怪陆离的巨大光影，重复单调的嘈杂广告从高空跌落，给人无处遁逃的压抑感。配乐则是间或击打声，轰隆隆非常响亮，给不能识微的观影人（我本人）<br>　　回去找了原著，要比电影活泼一些，所谓“绞刑架式的幽默”，有一种类似于《银河系漫游指南》的丧感。<br>　　男主角真的太惨了！在得知自己也不过是一个平凡的复制人的时候胃痛的表情……</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/201711_readingNotes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ygria">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孤光自照">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/01/31/201711_readingNotes/" itemprop="url">
-                  2017年11月阅读笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T16:26:39+08:00">
-                2018-01-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="《仿生人会梦见电子羊吗？》（-美国-菲利普·K·狄克）"><a href="#《仿生人会梦见电子羊吗？》（-美国-菲利普·K·狄克）" class="headerlink" title="《仿生人会梦见电子羊吗？》（[美国]菲利普·K·狄克）"></a>《仿生人会梦见电子羊吗？》（[美国]菲利普·K·狄克）</h3><p>　　看了电影《银翼杀手2049》（见<a href="http://ygria.cn/2017/11/02/2017Movies/" target="_blank" rel="noopener">观影杂记</a>），于是找了原著小说来看。<br>　　原著从标题到开头就
-　　</p>
-<p>　　</p>
+<h2 id="银翼杀手2049"><a href="#银翼杀手2049" class="headerlink" title="银翼杀手2049"></a>银翼杀手2049</h2><p>　　万圣节晚上去看的电影，本以为是一部爆米花，却没想到是非常晦涩压抑的科幻文艺片。没有了解过前作，不免觉得压抑无聊。<br> 　　因为才看完《电影批评》，所以看的时候特别留意画面与配乐，画面带着宏大的荒凉感，高度文明却毫无生机，漫无边际的滂沱雨幕，光怪陆离的巨大光影，重复单调的嘈杂广告从高空跌落，给人无处遁逃的压抑感。配乐则是间或击打声，轰隆隆非常响亮，使得不大能欣赏作品、昏昏欲睡的人突然警醒，好像在快睡着的数学课上忽遭点名。
+　</p>
 
           
         
@@ -691,6 +583,9 @@
 <h3 id="《人间失格》（-日-太宰治）"><a href="#《人间失格》（-日-太宰治）" class="headerlink" title="《人间失格》（[日]太宰治）"></a>《人间失格》（[日]太宰治）</h3><p>　　听这个名字也有很久了。<br>　　日本小说含蓄细腻，“圆熟嫣丽”，有如屏风上的浮世绘。我不大能欣赏这种趣味。小说讲了一个少爷的潦倒，写的情感自然有动人之处，却未免觉得他们说话都太客气，带着颓丧，和腰封上粗体大字“<strong> 日本文学巅峰人物、要读村上春树更要读太宰治，最具影响力小说 </strong>”一比较，就对比尤为鲜明了。<br>　　近来看书功利，不带知识性不大愿读，可能便是辜负，但也不觉可惜。</p>
 <h3 id="《局外人》（-法-加缪）"><a href="#《局外人》（-法-加缪）" class="headerlink" title="《局外人》（[法]加缪）"></a>《局外人》（[法]加缪）</h3><p>　　“一时，我突然产生了这么一个滑稽的印象：这些人似乎是专来审判我的。”<br>　　全书看完，还是觉得这句话最震撼，好像所有人类都并不能互相理解，他们可以互相问候、握手乃至性交，但都不过是物理的接触，真实的灵魂跃居于肉体之外，漠然审视。主角自然是“局外人”，当主角身处于被审判的“局”中，其他人亦身处局外。人类生而群居，在社会中生存必要有的社交和共情能力，正是进步的本源。孤僻的人类好像是进化树上生错的旁枝。心理描写非常经典，刻画细微，唯其真实才让人感同身受。</p>
 <h3 id="《阴阳师（第1卷）》"><a href="#《阴阳师（第1卷）》" class="headerlink" title="《阴阳师（第1卷）》"></a>《阴阳师（第1卷）》</h3><p>　　<br>　　快Ａ掉游戏时才看的原著，意外的挺有意思，努力想从描写的故事中看出自己所养的式神的影子，结果当然是全然失败、难以找到，只有荒川和花鸟卷近可附会，然而人设和情节也截然不同。<br>　　两位主角晴明和博雅还是很有意思的。晴明近似全知全能的经典主角，而博雅则非常痴，常被晴明称赞为“好汉子”……连续三年的夜晚都去等待一位大师弹琵琶，或者对月吹笛到流泪，都是十分风雅而传奇的痴人形象啊。</p>
+<h3 id="《仿生人会梦见电子羊吗？》（-美国-菲利普·K·狄克）"><a href="#《仿生人会梦见电子羊吗？》（-美国-菲利普·K·狄克）" class="headerlink" title="《仿生人会梦见电子羊吗？》（[美国]菲利普·K·狄克）"></a>《仿生人会梦见电子羊吗？》（[美国]菲利普·K·狄克）</h3><p>　　小说中的主人公里克生活的地方已被放射尘笼罩，动物大多灭绝，人类也大部分移民。地球已经成了一个巨大的垃圾场，而里克选择留下来，“说不定有哪一天尘埃会落定”，从一开始用情绪调节器将自己调节到适合工作的情绪，到巨大的寂寞攫住了他，吞噬他，使他终于感受到和妻子一样的绝望和抑郁。追杀仿生人时逐渐产生了对仿生人的移情，发现野生蛤蟆后的狂喜，最后又发现蛤蟆是电子的之后的麻木和空虚，结构流畅精悍，情绪非常有感染力。<br>　　这本书从书名到全书都透着一种冷峻的幽默，试图比附了一下，倒不是“含泪微笑”那样文艺优美，比较像一脸苦相地说笑话。一开始看就让我轻易联想起了《银河系漫游指南》里的情节：地球被随便炸毁，只留下了一行“基本上无害”的批语；深思算了无数年才算出来没头没脑的终极答案“42”，和此书中默瑟主义最后被发现只是一个跑龙套的演员在摄影棚里拍的片子意义相通——等号两端一边被放上沉重无比的生命、无穷多人的支柱和信仰、漫长无垠的岁月，另一边则轻飘飘地搁上一点破烂，一个敷衍的谎言，一个蹩脚滑稽的小丑，这其中的荒诞和讽刺，让人觉得心酸又好笑，比一般悲剧更加冷酷无情。</p>
+<h3 id="《鱼丽之宴》-木心"><a href="#《鱼丽之宴》-木心" class="headerlink" title="《鱼丽之宴》(木心)"></a>《鱼丽之宴》(木心)</h3><p>　　木心作品，在没正式翻开之前就有接触。常常会想到画家写文另有优势，因其审美超越常人，能写得更加色彩浓艳、生机勃勃。   </p>
+<p>　　</p>
 
           
         
@@ -767,7 +662,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -780,7 +675,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
