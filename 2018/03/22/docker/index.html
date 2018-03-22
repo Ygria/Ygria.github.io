@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="常见指令：docker images 查看已经安装了的镜像docker ps -a 列出所有正在运行的容器docker stopsudo docker exec -it containerID /bin/bash linux –mount指令 挂载文件系统之外的 容器互联：① –link②docker将容器加入自定义的Docker网络，连接多个容器， Docker ：开源项目 1、定义基于Linu">
+<meta name="description" content="常用指令docker images 查看已经安装了的镜像docker ps -a 列出所有正在运行的容器docker stopsudo docker exec -it containerID /bin/bash 进入容器内部 linux –mount 指令 挂载 Unix 文件系统（）之外的文件，或使用 Volume 数据卷。 容器互联：① –link②docker将容器加入自定义的Docker网">
 <meta name="keywords" content="运维,Linux,编程,2018">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
 <meta property="og:url" content="http://yoursite.com/2018/03/22/docker/index.html">
 <meta property="og:site_name" content="孤光自照">
-<meta property="og:description" content="常见指令：docker images 查看已经安装了的镜像docker ps -a 列出所有正在运行的容器docker stopsudo docker exec -it containerID /bin/bash linux –mount指令 挂载文件系统之外的 容器互联：① –link②docker将容器加入自定义的Docker网络，连接多个容器， Docker ：开源项目 1、定义基于Linu">
+<meta property="og:description" content="常用指令docker images 查看已经安装了的镜像docker ps -a 列出所有正在运行的容器docker stopsudo docker exec -it containerID /bin/bash 进入容器内部 linux –mount 指令 挂载 Unix 文件系统（）之外的文件，或使用 Volume 数据卷。 容器互联：① –link②docker将容器加入自定义的Docker网">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T10:24:23.982Z">
+<meta property="og:updated_time" content="2018-03-22T10:33:34.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
-<meta name="twitter:description" content="常见指令：docker images 查看已经安装了的镜像docker ps -a 列出所有正在运行的容器docker stopsudo docker exec -it containerID /bin/bash linux –mount指令 挂载文件系统之外的 容器互联：① –link②docker将容器加入自定义的Docker网络，连接多个容器， Docker ：开源项目 1、定义基于Linu">
+<meta name="twitter:description" content="常用指令docker images 查看已经安装了的镜像docker ps -a 列出所有正在运行的容器docker stopsudo docker exec -it containerID /bin/bash 进入容器内部 linux –mount 指令 挂载 Unix 文件系统（）之外的文件，或使用 Volume 数据卷。 容器互联：① –link②docker将容器加入自定义的Docker网">
 
 
 
@@ -323,20 +323,16 @@
       
 
       
-        <p>常见指令：<br>docker images 查看已经安装了的镜像<br>docker ps -a 列出所有正在运行的容器<br>docker stop<br>sudo docker exec -it containerID /bin/bash</p>
-<p>linux –mount指令 挂载文件系统之外的</p>
-<p>容器互联：<br>① –link<br>②docker<br>将容器加入自定义的Docker网络，连接多个容器，</p>
+        <h1 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h1><p>docker images 查看已经安装了的镜像<br>docker ps -a 列出所有正在运行的容器<br>docker stop<br>sudo docker exec -it containerID /bin/bash 进入容器内部</p>
+<p>linux –mount 指令 挂载 Unix 文件系统（）之外的文件，或使用 Volume 数据卷。</p>
+<p>容器互联：<br>① –link<br>②docker<br>将容器加入自定义的Docker网络，连接多个容器。</p>
 <p>Docker ：开源项目</p>
-<p>1、定义<br>基于Linux内核，对进程进行封装和隔离，属于操作系统层面的虚拟化技术，在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。</p>
-<p>2、优势</p>
-<p>3、Docker 基本概念：</p>
-<p>镜像（ Image ）<br>容器 （ Container ）<br>仓库 （ Repository ）</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>基于Linux内核，对进程进行封装和隔离，属于操作系统层面的虚拟化技术，在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。</p>
+<h1 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h1><h1 id="Docker-基本概念："><a href="#Docker-基本概念：" class="headerlink" title="Docker 基本概念："></a>Docker 基本概念：</h1><p>镜像（ Image ）<br>容器 （ Container ）<br>仓库 （ Repository ）</p>
 <p>概述：容器之于镜像，如同实例之于类，为镜像生成了一个实例。</p>
-<p>4、定制Dockerfile：</p>
-<p>定制镜像<br>第一行：基础</p>
+<h1 id="定制Dockerfile："><a href="#定制Dockerfile：" class="headerlink" title="定制Dockerfile："></a>定制Dockerfile：</h1><p>定制镜像<br>第一行：基础</p>
 <p>FROM    scratch：以什么为基础镜像，若为scratch意味着不以任何镜像为基础。</p>
-<p>二、容器</p>
-<p>若不使用-d，容器会将输出的结果（STDOUT）打印到宿主机上。<br>如果使用了-d参数运行容器，容器会在后台运行，并不会把</p>
+<h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>若不使用-d，容器会将输出的结果（STDOUT）打印到宿主机上。<br>如果使用了-d参数运行容器，容器会在后台运行，并不会把</p>
 
       
     </div>
@@ -434,8 +430,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg"
@@ -488,6 +493,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用指令"><span class="nav-number">1.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优势"><span class="nav-number">3.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-基本概念："><span class="nav-number">4.</span> <span class="nav-text">Docker 基本概念：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制Dockerfile："><span class="nav-number">5.</span> <span class="nav-text">定制Dockerfile：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器"><span class="nav-number">6.</span> <span class="nav-text">容器</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
