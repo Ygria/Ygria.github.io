@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="2017,电视剧,电影," />
+  <meta name="keywords" content="运维,Linux,编程,2018," />
 
 
 
@@ -87,18 +87,20 @@
 
 
 
-<meta name="description" content="House.M.D　　快要看完《豪斯医生》了。　　八季电视剧几乎是连续在看，还剩几集，可能看完后过一阵子会重头再看一遍——内心非常惆怅：要再过多久，才能遇到这样一个极其丰富、极具魅力的男主角啊！　　豪斯常说两句话，一句是人人都撒谎，一句是人永远也不会变。如果说前一句是他对人性的洞察，后一句则更像是一句宣言：豪斯永远是豪斯，以自己固有的自毁、自傲、玩世不恭、保存自我，不存心获得理解也不期待理解，交付">
-<meta name="keywords" content="2017,电视剧,电影">
+<meta name="description" content="常用指令docker images 列出本地 docker 镜像docker ps -a     列出所有正在运行的容器docker stop containerID    停止容器docker start containerID    开始容器sudo docker exec -it containerID /bin/bash      进入容器内linux --mount      挂载 Un">
+<meta name="keywords" content="运维,Linux,编程,2018">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017年观影&#x2F;剧杂记">
-<meta property="og:url" content="http://yoursite.com/2018/01/31/2017TVSeries/index.html">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://yoursite.com/2018/03/23/2018_dockerNotes/index.html">
 <meta property="og:site_name" content="孤光自照">
-<meta property="og:description" content="House.M.D　　快要看完《豪斯医生》了。　　八季电视剧几乎是连续在看，还剩几集，可能看完后过一阵子会重头再看一遍——内心非常惆怅：要再过多久，才能遇到这样一个极其丰富、极具魅力的男主角啊！　　豪斯常说两句话，一句是人人都撒谎，一句是人永远也不会变。如果说前一句是他对人性的洞察，后一句则更像是一句宣言：豪斯永远是豪斯，以自己固有的自毁、自傲、玩世不恭、保存自我，不存心获得理解也不期待理解，交付">
+<meta property="og:description" content="常用指令docker images 列出本地 docker 镜像docker ps -a     列出所有正在运行的容器docker stop containerID    停止容器docker start containerID    开始容器sudo docker exec -it containerID /bin/bash      进入容器内linux --mount      挂载 Un">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T08:42:43.555Z">
+<meta property="og:image" content="https://ygria.oss-cn-hangzhou.aliyuncs.com/Hexo/docker%E4%BC%98%E5%8A%BF.png">
+<meta property="og:updated_time" content="2018-03-23T04:00:34.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017年观影&#x2F;剧杂记">
-<meta name="twitter:description" content="House.M.D　　快要看完《豪斯医生》了。　　八季电视剧几乎是连续在看，还剩几集，可能看完后过一阵子会重头再看一遍——内心非常惆怅：要再过多久，才能遇到这样一个极其丰富、极具魅力的男主角啊！　　豪斯常说两句话，一句是人人都撒谎，一句是人永远也不会变。如果说前一句是他对人性的洞察，后一句则更像是一句宣言：豪斯永远是豪斯，以自己固有的自毁、自傲、玩世不恭、保存自我，不存心获得理解也不期待理解，交付">
+<meta name="twitter:title" content="Docker">
+<meta name="twitter:description" content="常用指令docker images 列出本地 docker 镜像docker ps -a     列出所有正在运行的容器docker stop containerID    停止容器docker start containerID    开始容器sudo docker exec -it containerID /bin/bash      进入容器内linux --mount      挂载 Un">
+<meta name="twitter:image" content="https://ygria.oss-cn-hangzhou.aliyuncs.com/Hexo/docker%E4%BC%98%E5%8A%BF.png">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/31/2017TVSeries/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/23/2018_dockerNotes/"/>
 
 
 
 
 
-  <title> 2017年观影/剧杂记 | 孤光自照 </title>
+  <title> Docker | 孤光自照 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/2017TVSeries/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/2018_dockerNotes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygria">
@@ -272,7 +274,7 @@
             
             
               
-                2017年观影/剧杂记
+                Docker
               
             
           </h1>
@@ -287,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T16:26:39+08:00">
-                2018-01-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T11:40:30+08:00">
+                2018-03-23
               </time>
             
 
@@ -323,9 +325,25 @@
       
 
       
-        <h2 id="House-M-D"><a href="#House-M-D" class="headerlink" title="House.M.D"></a>House.M.D</h2><p>　　快要看完《豪斯医生》了。<br>　　八季电视剧几乎是连续在看，还剩几集，可能看完后过一阵子会重头再看一遍——内心非常惆怅：要再过多久，才能遇到这样一个极其丰富、极具魅力的男主角啊！<br>　　豪斯常说两句话，一句是人人都撒谎，一句是人永远也不会变。如果说前一句是他对人性的洞察，后一句则更像是一句宣言：豪斯永远是豪斯，以自己固有的自毁、自傲、玩世不恭、保存自我，不存心获得理解也不期待理解，交付给世界的，唯有一点轻蔑。<br>　　整整八季都在说他，他也一直都没有任何改变，变得更丰富的只是他的经历，像从不同角度去窥探他原本就复杂多元的灵魂。佐证除了他出狱时威尔逊说的那句“你一点也没变”，还有别人问起豪斯腿没有残疾时是什么样，得到的回答也是“和现在没有什么区别”。这是他的痛苦之源，亦是魅力所在。<br>　　我看剧太容易真情实感，一方面是因为一开始就很喜欢豪斯，另一方面则是因为编剧非常善于使用对比和转折手法——室内春光融融，人人欢聚喜气洋洋，室外是大雪纷飞，豪斯独自伫立观望，然后缓缓走开。聚会热闹非凡，豪斯独自在浴缸里喝酒。一边是欢庆圣诞，一边是豪斯独自弹着旧钢琴。——这种孤独当然魅力十足。<br>　　转折也来得冷酷锐利，让人猝不及防：豪斯恢复了双腿，小孩儿一样玩滑板，下一瞬就是他腿又痛了，从滑板上走下来，忧心忡忡地扶着膝盖。豪斯以为自己终于得遂所愿，获得了真爱，转眼却发现一切不过是幻梦，爱人的口红是自己的药瓶。他遇到了心爱的姑娘，弹钢琴时交换着深情脉脉的眼神，随即自己不慎害得重伤的病人躺在轮椅上被推进房间……一切温情欢乐的瞬间都短暂，而疼痛来势汹汹，阴魂不散，是人生缠绕不去的底色。<br>　　豪斯常常被称赞、被感谢——因其绝顶聪明的头脑、极其优秀的专业能力——甚至被称颂为神明。可是哪一种神明会这样毫不吝惜地展露狼狈与伤痛？他一直就满身尘埃，无需他人将他从云端推落。无神主义者该去憎恶哪一种天道？该去祈求哪一路神灵？当他能听出安慰的虚伪，洞穿社交虚伪的本质，又怎能期待从中获得安慰？<br>　　可能正是因为看得太透彻，才让豪斯面对感情时幼稚消极：一开始不去获得，就无所谓失去，像是看见熊熊的炉火，虽然想靠近被温暖，但怕被火灼伤，所以干脆不靠近，也不承认想靠近。他所处的很多困境从旁观者看来都并非死局，甚至很多不幸压根都是他自己亲手造成的，只需要稍作妥协，就可以顺利摆脱。<br>　　但豪斯决不妥协，决不改变。将怜悯加诸豪斯更像是一种轻蔑和侮辱，我只是一个动情而无助的观众，唯一的选择是看着他按照自己选择的道路走下去。<br>　　一直都喜欢移情和类比，但是豪斯世无其二。</p>
-<h2 id="银翼杀手2049"><a href="#银翼杀手2049" class="headerlink" title="银翼杀手2049"></a>银翼杀手2049</h2><p>　　万圣节晚上去看的电影，本以为是一部爆米花，却没想到是非常晦涩压抑的科幻文艺片。没有了解过前作，不免觉得压抑无聊。<br> 　　因为才看完《电影批评》，所以看的时候特别留意画面与配乐，画面带着宏大的荒凉感，高度文明却毫无生机，漫无边际的滂沱雨幕，光怪陆离的巨大光影，重复单调的嘈杂广告从高空跌落，给人无处遁逃的压抑感。配乐则是间或击打声，轰隆隆非常响亮，使得不大能欣赏作品、昏昏欲睡的人突然警醒，好像在快睡着的数学课上忽遭点名。
-　</p>
+        <h1 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h1><p><code>docker images</code> 列出本地 docker 镜像<br><code>docker ps -a</code>     列出所有正在运行的容器<br><code>docker stop containerID</code>    停止容器<br><code>docker start containerID</code>    开始容器<br><code>sudo docker exec -it containerID /bin/bash</code>      进入容器内<br><code>linux --mount</code>      挂载 Unix 文件系统（ Unix File System ）之外的文件，或使用 Volume 数据卷。</p>
+<p>容器互联：</p>
+<p>推荐将容器加入自定义的Docker网络，连接多个容器，或使用<code>--link</code> 指令。</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>基于Linux内核和 LXC (Linux Container) 技术，对进程进行封装和隔离，属于操作系统层面的虚拟化技术，在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。</p>
+<h1 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h1><p>相较于传统的虚拟机技术，docker 具有更加轻量级、易于管理和并发的特点。</p>
+<p><img src="https://ygria.oss-cn-hangzhou.aliyuncs.com/Hexo/docker%E4%BC%98%E5%8A%BF.png" alt="image"></p>
+<h1 id="Docker-基本概念："><a href="#Docker-基本概念：" class="headerlink" title="Docker 基本概念："></a>Docker 基本概念：</h1><ul>
+<li>镜像（ Image ）</li>
+<li>容器 （ Container ）</li>
+<li>仓库 （ Repository ）</li>
+</ul>
+<h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>使用pull指令，可以拉取 DockerHub 中的开源镜像到本地使用。<br>docker pull mysql<br>docker images 列出本地的镜像</p>
+<h3 id="定制镜像"><a href="#定制镜像" class="headerlink" title="定制镜像"></a>定制镜像</h3><p>使用 DockerFile</p>
+<p>FROM scratch<br>FROM指令为以什么为基础镜像，若为scratch意味着不以任何镜像为基础。</p>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>容器之于镜像，如同实例之于类，创建容器，意为给镜像生成了一个实例。</p>
+<blockquote>
+<p>docker –name mysql -p 3306:3306 -d mysql<br>若不使用-d，容器会将输出的结果（STDOUT）打印到宿主机上。<br>如果使用了-d参数运行容器，容器会在后台运行，并不会在前台输出结果。若要看输出，可使用docker logs containerID指令进行查看。</p>
+</blockquote>
+<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p>在定制好个人的镜像后，可以搭建仓库进行存储。</p>
 
       
     </div>
@@ -349,11 +367,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/2017/" rel="tag"># 2017</a>
+            <a href="/tags/运维/" rel="tag"># 运维</a>
           
-            <a href="/tags/电视剧/" rel="tag"># 电视剧</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/电影/" rel="tag"># 电影</a>
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+            <a href="/tags/2018/" rel="tag"># 2018</a>
           
         </div>
       
@@ -366,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/31/201710_readingNotes/" rel="next" title="2017年10月阅读笔记">
-                <i class="fa fa-chevron-left"></i> 2017年10月阅读笔记
+              <a href="/2018/01/31/2017TVSeries/" rel="next" title="2017年观影/剧杂记">
+                <i class="fa fa-chevron-left"></i> 2017年观影/剧杂记
               </a>
             
           </div>
@@ -375,10 +395,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/23/2018_dockerNotes/" rel="prev" title="Docker">
-                Docker <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#House-M-D"><span class="nav-number">1.</span> <span class="nav-text">House.M.D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#银翼杀手2049"><span class="nav-number">2.</span> <span class="nav-text">银翼杀手2049</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用指令"><span class="nav-number">1.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优势"><span class="nav-number">3.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-基本概念："><span class="nav-number">4.</span> <span class="nav-text">Docker 基本概念：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像"><span class="nav-number">4.1.</span> <span class="nav-text">镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定制镜像"><span class="nav-number">4.1.1.</span> <span class="nav-text">定制镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器"><span class="nav-number">4.2.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库"><span class="nav-number">4.3.</span> <span class="nav-text">仓库</span></a></li></ol></li></ol></div>
             
 
           </div>

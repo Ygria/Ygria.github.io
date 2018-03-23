@@ -251,6 +251,142 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/2018_dockerNotes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ygria">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孤光自照">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/03/23/2018_dockerNotes/" itemprop="url">
+                  Docker
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T11:40:30+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h1><p><code>docker images</code> 列出本地 docker 镜像<br><code>docker ps -a</code>     列出所有正在运行的容器<br><code>docker stop containerID</code>    停止容器<br><code>docker start containerID</code>    开始容器<br><code>sudo docker exec -it containerID /bin/bash</code>      进入容器内<br><code>linux --mount</code>      挂载 Unix 文件系统（ Unix File System ）之外的文件，或使用 Volume 数据卷。</p>
+<p>容器互联：</p>
+<p>推荐将容器加入自定义的Docker网络，连接多个容器，或使用<code>--link</code> 指令。</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>基于Linux内核和 LXC (Linux Container) 技术，对进程进行封装和隔离，属于操作系统层面的虚拟化技术，在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。</p>
+<h1 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h1><p>相较于传统的虚拟机技术，docker 具有更加轻量级、易于管理和并发的特点。</p>
+<p><img src="https://ygria.oss-cn-hangzhou.aliyuncs.com/Hexo/docker%E4%BC%98%E5%8A%BF.png" alt="image"></p>
+<h1 id="Docker-基本概念："><a href="#Docker-基本概念：" class="headerlink" title="Docker 基本概念："></a>Docker 基本概念：</h1><ul>
+<li>镜像（ Image ）</li>
+<li>容器 （ Container ）</li>
+<li>仓库 （ Repository ）</li>
+</ul>
+<h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>使用pull指令，可以拉取 DockerHub 中的开源镜像到本地使用。<br>docker pull mysql<br>docker images 列出本地的镜像</p>
+<h3 id="定制镜像"><a href="#定制镜像" class="headerlink" title="定制镜像"></a>定制镜像</h3><p>使用 DockerFile</p>
+<p>FROM scratch<br>FROM指令为以什么为基础镜像，若为scratch意味着不以任何镜像为基础。</p>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>容器之于镜像，如同实例之于类，创建容器，意为给镜像生成了一个实例。</p>
+<blockquote>
+<p>docker –name mysql -p 3306:3306 -d mysql<br>若不使用-d，容器会将输出的结果（STDOUT）打印到宿主机上。<br>如果使用了-d参数运行容器，容器会在后台运行，并不会在前台输出结果。若要看输出，可使用docker logs containerID指令进行查看。</p>
+</blockquote>
+<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p>在定制好个人的镜像后，可以搭建仓库进行存储。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/2017TVSeries/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -531,7 +667,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -544,7 +680,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
