@@ -251,217 +251,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/线程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ygria">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孤光自照">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/11/线程/" itemprop="url">
-                  线程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T13:34:30+08:00">
-                2018-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>public interface Runnable{</p>
-<pre><code>public void run();
-</code></pre><p>}</p>
-<p>1、每一个线程有它自己的上下文，即每个线程对象都有属于自己的内存空间存放自己的运行状态</p>
-<p>start()与run的区别：</p>
-<p>当实例化一个Thread对象并执行start()之后，线程进入就绪(Runnable)状态</p>
-<p>进入了就绪状态，并不表示就开始执行run()方法，而是被排入了一个队列中，由线程调度器从队列中取出线程来轮流执行</p>
-<p>几种让运行中的线程进入Not Runnable状态，或是blocked状态或阻塞状态：</p>
-<p>调用sleep()</p>
-<p>调用wait</p>
-<p>等待I/O完成</p>
-<p>线程调度器将不分配执行时间给这个线程，直到以下的几个情况让线程回到Runnable状态：</p>
-<p>线程调用notify()</p>
-<p>线程调用notifyAll()</p>
-<p>线程呼叫interrupt()</p>
-<p>sleep()结束</p>
-<p>I/O完成</p>
-<p>当线程执行完成（或发生例外）而离开run()方法，则线程执行完毕，进入Dead状态，可以使用isAlive()方法来测试线程是否存活。</p>
-<p>Daemon 守护线程</p>
-<p>public static void main(String[] args){</p>
-<pre><code>Thread thread = new Thread\{  
-</code></pre><p>//匿名类的写法</p>
-<pre><code>new Runnable()\{  
-
-
-    public void run()\{  
-
-
-        while(true)\{  
-
-
-            System.out.print(&quot;T&quot;);  
-
-
-    \}  
-
-
-\}  
-
-
-\});  
-</code></pre><p>//设定为Daemon线程</p>
-<p>thread.start();</p>
-<p>}</p>
-<p>线程已经运行到最后一个语句了，应该是工作结束的时候了，</p>
-<p>2、线程有其优先权，由1（Thread.MIN_PRIORITY）到10（Thread.MAX_PRIORITY），预设是 Thread.NORM_PRIORITY（5），您可以使用Thread的setPriority()方法来设定线程的优先权，设定必须在1到10之间，否则会丢出IllegalArgumentException。</p>
-<p>优先权高的线程会先被执行完毕，然后才会轮到优先权低的线程，如果优先权相同，则输流执行（Round-robin方式）。</p>
-<p>线程的休眠与唤醒：线程的休眠指线程暂时处于等待的一种状态，调用Thread类的sleep()方法</p>
-<p>若线程因为执行sleep()或是wait()而进入Not Runnable状态，可以使用interrupt(),，而程序会丢出InterruptedException例外，因而使得线程离开run方法</p>
-<p>终止线程的唯一方法：是使run()执行结束</p>
-<p>结束run()运行的方法：</p>
-<p>设置线程运行结束的标志(stopFlag)</p>
-<p>线程终止后，不能通过start方法</p>
-<p>while(!stopFlag){……}</p>
-<p>while(!interrupted)</p>
-<p>两种方法的比较</p>
-<p>①使用Runnable接口</p>
-<ul>
-<li>可以从其他类集成</li>
-<li>保持程序风格的一致性</li>
-<li>更灵活、更常见</li>
-</ul>
-<p>②直接继承Thread类</p>
-<ul>
-<li>不能再从其他类集成</li>
-<li>编写简单，直接作为线程操纵</li>
-</ul>
-<p>3、线程常用操作方法</p>
-<p>在多线程中所有的操作方法实际上都是从Thread类开始的，所有的操作基本都在Thread类之中</p>
-<p>取得和设置线程名称</p>
-<ul>
-<li>在Thread类中，可以通过getName()方法取得线程的名称，通过setName()方法设置线程的名称</li>
-<li>线程的名称一般在启动线程前设置，但也允许为已经运行的线程设置名称，允许两个Thread对象有相同的名称，但为了清晰，应该尽量避免这种情况的发生</li>
-<li>若程序没有为线程指定名称，系统会自动分配名称</li>
-</ul>
-<p>currentThread()方法：取得当前正在运行的线程</p>
-<p>isAlive()方法：用于判断线程是否在运行</p>
-<p><strong>线程的强制运行：在线程操作中，可以使用join()方法让一个线程强制运行。</strong>在该线程运行期间，其他线程无法运行，必须等待此线程执行完成之后才可以继续执行。</p>
-<p>线程的礼让: 使用yield()方法将一个线程的操作暂时让给其他线程执行</p>
-<p>线程的优先级（默认是5，可以通过setPriority实现）</p>
-<p>4、信息在多线程下共享时，容易因为多个线程同时更新同一个对象的信息，而造成信息冲突</p>
-<p>两个以上线程共享同一个数据取进行读写操作，则该共享数据区就是一个临界区</p>
-<p>由于多个线程执行顺序的不同，会影响临界区中变量的值或程序输出，因此对临界区的访问需要特殊处理</p>
-<p>5、互斥锁</p>
-<ul>
-<li>对于临界区（由两个及以上线程共享内存的区域）变量的读写，对于同一个线程来说应该是一个原子操作</li>
-<li>在Java中引入了“对象互斥锁”来实现原子操作</li>
-</ul>
-<p>实现方案：</p>
-<ul>
-<li>每一个对象有一个“互斥锁”</li>
-<li>synchronized关键字用来获取对象的互斥锁，当某个对象用synchronized修饰时，表明该对象在任一时刻只能由一个线程访问</li>
-<li>当线程A想要访问临界区中的共享变量时，它必须要获得临界区对象的“对象锁”。若获取成功，则可访问临界区，否则进入等待区</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/JavaScript学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -501,7 +290,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T13:34:30+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T14:53:46+08:00">
                 2018-04-11
               </time>
             
@@ -539,88 +328,20 @@
       
         
           
-            <p>写在前面：</p>
-<p>不管容易还是简单</p>
-<p>总要尝试才知道答案</p>
-<p>1、JavaScript初探</p>
-<p>JavaScript：<strong>轻量级脚本语言</strong>，是可插入HTML页面的编程代码。</p>
-<p>将JavaScript插入HTML页面后，可由所有的现代浏览器执行。</p>
-<p>2、对变量进行声明</p>
-<p>var mood,age;</p>
-<p>var mood;</p>
-<p>var age;</p>
-<p>var mood = “happy”;</p>
-<p>var age = 33;</p>
-<p>var mood = “happy”,age = 33;</p>
-<p>JavaScript不需要进行类型声明，因此它时一种<strong>弱类型（weekly typed）</strong></p>
-<p>①字符串</p>
-<p>单引号与双引号毫无区别，若字符串中包含单引号，则一般使用双引号。</p>
-<p>var mood = “don’t ask”;</p>
-<p>若要使用单引号，则需要对特殊符号进行<strong>转义</strong>：</p>
-<p>var mood = ‘don\‘t ask’;</p>
-<p>作为一个好的编程习惯，<strong>不管选择用双引号还是单引号，都应当在整个脚本中保持一致</strong>。</p>
-<p>②数值</p>
-<p>如果想给一个变量赋数值，不用限定它必须是一个整数，JavaScript允许使用带小数点的数值，并且允许任意位小数，这样的数成为浮点数（floating-point number）：</p>
-<p>var age = 33.25;</p>
-<p>var temperature = -20;</p>
-<p>var temperature = -20.3333333</p>
-<p>③布尔值</p>
-<p>另一种重要的数据类型时布尔（boolean）类型</p>
-<p>var sleeping = true;</p>
-<p>var married = true;</p>
-<p>④数组</p>
-<p><strong>字符串、数组和布尔值都有标量（scalar）</strong>，如果某个变量时标量，它在任意时刻都只能有一个值，若需</p>
-<p>var beatles = Array(4);</p>
-<p>无法预知某个数组有多少个元素，JavaScript根本不要求在声明数组时必须给出元素个数时，可以在声明数组时不给出元素个数：</p>
-<p>var beatles = Array();</p>
-<p>根据这个位置都有这个元素的下标（index），数组里一个元素的一个下标，下标必须用方括号括起来：</p>
-<p>array[index] = element;</p>
-<p>声明方式：</p>
-<p><strong>4.1</strong></p>
-<p>var beatles = Array(4);</p>
-<p>beatles[0] = “John”;</p>
-<p>beatles[1] = “Paul”;</p>
-<p>beatles[2] = “George”;</p>
-<p>beatles[3] = “Ringo”;</p>
-<p><strong>4.2</strong></p>
-<p>var beatles = Array(“John”,”Paul”,”George”,”Ringo”);</p>
-<p>var years = [1940,1941,1942,1942];</p>
-<p>var lennon = [“John”,1940,false];</p>
-<p>数组中还可以存储</p>
-<p>var lennon = Array();</p>
-<p>lennon[“name”] = “John”;</p>
-<p>lennon[“year”] = 1940</p>
-<p>lennon[“living”]= false</p>
-<p>⑤对象</p>
-<p>var lennon = {name:”John”,year:1940,living:false};</p>
-<p><strong>用对象来代替传统数组，可以通过元素的名称而不是下标数字来引用它们，大大提高了脚本的可读性。</strong></p>
-<p>3、操作</p>
-<p>①算数操作符</p>
-<p>+</p>
-<p>相加或字符串拼接</p>
-<p>在数值与</p>
-<p>4、nodeType</p>
-<p>nodeType属性总共有12种可选值，但其中仅有3种</p>
-<table style="border-collapse: collapse; min-width: 100%;"><br> <tbody><br>  <tr><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     节点类型<br>    </div></td><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     nodeType<br>    </div></td><br>  </tr><br>  <tr><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     元素节点<br>    </div></td><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     1<br>    </div></td><br>  </tr><br>  <tr><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     属性节点<br>    </div></td><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     2<br>    </div></td><br>  </tr><br>  <tr><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     文本节点<br>    </div></td><br>   <td style="border: 1px solid rgb(204, 204, 204); width: 130px; padding: 8px;"><br>    <div><br>     3<br>    </div></td><br>  </tr><br> </tbody><br></table>
-
-
-
-
-<p>5、学习JavaScript/前端应当注意：</p>
-<p>①平稳退化：借鉴CSS，在禁用了JavaScript的情况下也能正确显示</p>
-<p>②合理分离：将JavaScript与表现分离</p>
-<p>③向后兼容</p>
-<p>④性能考虑</p>
-<p>6、同源协议</p>
-<p>①定义及用处</p>
-<p><strong>协议相同</strong></p>
-<p><strong>域名相同</strong></p>
-<p><strong>端口相同</strong></p>
-<p>用途：信息安全</p>
-<p>②限制范围:</p>
-<p>（1）Cookie、LocalStorage、IndexDB无法读取</p>
-<p>（2）DOM无法获得</p>
-<p>（3）AJAVX请求不能发送</p>
+            <p>写在前面：<br>不管容易还是简单<br>总要尝试才知道答案</p>
+<h2 id="JavaScript初探"><a href="#JavaScript初探" class="headerlink" title="JavaScript初探"></a>JavaScript初探</h2><p>JavaScript：<strong>轻量级脚本语言</strong>，是可插入HTML页面的编程代码。<br>将JavaScript插入HTML页面后，可由所有的现代浏览器执行。</p>
+<h2 id="对变量进行声明"><a href="#对变量进行声明" class="headerlink" title="对变量进行声明"></a>对变量进行声明</h2><p>var mood,age;<br>var mood;<br>var age;<br>var mood = “happy”;<br>var age = 33;<br>var mood = “happy”,age = 33;<br>JavaScript不需要进行类型声明，因此它时一种<strong>弱类型（weekly typed）</strong></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>单引号与双引号毫无区别，若字符串中包含单引号，则一般使用双引号。<br>var mood = “don’t ask”;<br>若要使用单引号，则需要对特殊符号进行<strong>转义</strong>：<br>var mood = ‘don\‘t ask’;<br>作为一个好的编程习惯，<strong>不管选择用双引号还是单引号，都应当在整个脚本中保持一致</strong>。</p>
+<h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><p>如果想给一个变量赋数值，不用限定它必须是一个整数，JavaScript允许使用带小数点的数值，并且允许任意位小数，这样的数成为浮点数（floating-point number）：<br>var age = 33.25;<br>var temperature = -20;<br>var temperature = -20.3333333</p>
+<h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p>另一种重要的数据类型时布尔（boolean）类型<br>var sleeping = true;<br>var married = true;</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>字符串、数组和布尔值都有标量（scalar）</strong>，如果某个变量时标量，它在任意时刻都只能有一个值，若需<br>var beatles = Array(4);<br>无法预知某个数组有多少个元素，JavaScript根本不要求在声明数组时必须给出元素个数时，可以在声明数组时不给出元素个数：<br>var beatles = Array();<br>根据这个位置都有这个元素的下标（index），数组里一个元素的一个下标，下标必须用方括号括起来：<br>array[index] = element;<br>声明方式：<br>（1）<br>var beatles = Array(4);<br>beatles[0] = “John”;<br>beatles[1] = “Paul”;<br>beatles[2] = “George”;<br>beatles[3] = “Ringo”;<br>（2）<br>var beatles = Array(“John”,”Paul”,”George”,”Ringo”);<br>var years = [1940,1941,1942,1942];<br>var lennon = [“John”,1940,false];<br>数组中还可以存储<br>var lennon = Array();<br>lennon[“name”] = “John”;<br>lennon[“year”] = 1940<br>lennon[“living”]= false</p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>var lennon = {name:”John”,year:1940,living:false};<br><strong>用对象来代替传统数组，可以通过元素的名称而不是下标数字来引用它们，大大提高了脚本的可读性。</strong></p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h3 id="算数操作符"><a href="#算数操作符" class="headerlink" title="算数操作符"></a>算数操作符</h3><p>+<br>相加或字符串拼接<br>在数值与</p>
+<h2 id="nodeType"><a href="#nodeType" class="headerlink" title="nodeType"></a>nodeType</h2><p>nodeType属性总共有12种可选值，但其中仅有3种，它们是：元素节点（1），属性节点（2），文本节点（3）。</p>
+<h2 id="学习JavaScript-前端应当注意："><a href="#学习JavaScript-前端应当注意：" class="headerlink" title="学习JavaScript/前端应当注意："></a>学习JavaScript/前端应当注意：</h2><h3 id="平稳退化"><a href="#平稳退化" class="headerlink" title="平稳退化"></a>平稳退化</h3><p>借鉴CSS，在禁用了JavaScript的情况下也能正确显示</p>
+<h3 id="合理分离"><a href="#合理分离" class="headerlink" title="合理分离"></a>合理分离</h3><p>将JavaScript与表现分离</p>
+<h3 id="向后兼容"><a href="#向后兼容" class="headerlink" title="向后兼容"></a>向后兼容</h3><h3 id="性能考虑"><a href="#性能考虑" class="headerlink" title="性能考虑"></a>性能考虑</h3><h2 id="同源协议"><a href="#同源协议" class="headerlink" title="同源协议"></a>同源协议</h2><h3 id="定义及用处"><a href="#定义及用处" class="headerlink" title="定义及用处"></a>定义及用处</h3><p><strong>协议相同</strong><br><strong>域名相同</strong><br><strong>端口相同</strong><br>用途：信息安全</p>
+<h3 id="限制范围"><a href="#限制范围" class="headerlink" title="限制范围:"></a>限制范围:</h3><p>（1）Cookie、LocalStorage、IndexDB无法读取<br>（2）DOM无法获得<br>（3）AJAVX请求不能发送</p>
 
           
         
@@ -1077,7 +798,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1090,7 +811,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
