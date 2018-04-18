@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/JavaScript学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/Head First 深入浅出HTML CSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygria">
@@ -273,8 +273,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/04/11/JavaScript学习笔记/" itemprop="url">
-                  JavaScript学习笔记
+                <a class="post-title-link" href="/2018/04/18/Head First 深入浅出HTML CSS/" itemprop="url">
+                  Head First 深入浅出HTML CSS
                 </a>
               
             
@@ -290,7 +290,255 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T14:53:46+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T15:24:30+08:00">
+                2018-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>当浏览器阅读HTML时，它会解析包围文本的所有标记。标记使用尖括号括起来的字母或单词，标记告诉浏览器文本的结构和意义。<br>用包围文本的成对标记告诉浏览器网页的结构。<br>元素=开始标记+内容+结束标记<br>元素可以拥有“属性”：<br>属性用来为一个元素提供附加信息。例如，如果有一个样式元素，属性允许你确切地描述这个元素——用来提供该元素的额外信息。</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p><strong>HTML ：超文本标记语言</strong> <em>HyperText Markup Language</em><br><strong>CSS：级联样式表</strong> <em>Cascading Style Sheet</em><br>CSS是与HTML完全不同的语言。<br>分别使用两种语言，HTML用于创建结构，CSS用于创建样式，使用它们在各自的领域完成工作。</p>
+<h2 id="深入理解超文本"><a href="#深入理解超文本" class="headerlink" title="深入理解超文本"></a>深入理解超文本</h2><p>使用<a>标签，创建超文本链接到另外一个网页，<a>元素中的内容在网页中是可点击的，Href属性告诉浏览器链接的目的地。</a></a></p>
+<h2 id="构建模块"><a href="#构建模块" class="headerlink" title="构建模块"></a>构建模块</h2><ol>
+<li>步骤：先计划好网页的结构，再绘制略图，最后写HTML。</li>
+<li>使用大的块元素来创建网页，然后用内联元素修饰。</li>
+<li>通常使用最能匹配内容含义的元素。例如，当你需要列表时绝不用段落表示。<br><strong>块元素</strong>：<p>、<blockquote>、<ol>、<ul>和<li>：都是块元素，它们独立显示，文本前后有空行。<br><strong>内联元素</strong>：<q>、<em>、<a>是内联元素，这些元素的内容和其他内容一起跟随在文字流中。<h3 id="q与blockquote"><a href="#q与blockquote" class="headerlink" title="q与blockquote"></a>q与blockquote</h3><q></q><br>引用标签：简短地“引用”现有文字的一部分<br><blockquote></blockquote><br>区块引用：引用一大段文字并独立显示<br><blockquote>和<q>是两种不同类型的元素，<blockquote>元素是块（block）元素而<q>是内联（inline）元素。<br><br>元素：显示换行<h3 id="li与ol元素"><a href="#li与ol元素" class="headerlink" title="li与ol元素"></a>li与ol元素</h3>用<li></li>把每个列表项封入，每个<li>元素将在列表中开始一个列表项。<br><strong>u</strong>nordered <strong>l</strong>ist = <strong>ul**</strong> <strong>无序列表
+</strong>o<strong>rdered </strong>l<strong>ist = </strong>ol<strong>** </strong> 有序列表<br><strong>l</strong>ist <strong>i</strong>tem = <strong>li</strong> 列表项<br><ol>和<li>必须一起使用<br>列表是一组项目：</li><li>元素用来确定每个项目，<ol>则是把它们组成一组。<br>自定义列表<dl>：列表中每个项目都有一个项限<dt>和一个描述<dd>。<h3 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h3><br>是个“空元素”，它没有内容，且仅由一个标记组成。<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3>当把一个元素放入到另一个元素中，叫做嵌套。组织网页中的嵌套元素相当于画家族树。<br>作用：防止标记不匹配。<h2 id="部署与扩展"><a href="#部署与扩展" class="headerlink" title="部署与扩展"></a>部署与扩展</h2><h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3>HTTP协议是超文本传输协议，当找不到对应超文本时，返回404<h3 id="a标签的扩展"><a href="#a标签的扩展" class="headerlink" title="a标签的扩展"></a>a标签的扩展</h3><ul>
+<li>目标锚：给出目的标识：<a href="index.html\#chai">See Chai Tea</a><a id="chai">目的</a></li>
+<li>使用target（对象）打开一个新窗口：<a target="\_blank"><br>target属性告诉浏览器在哪打开href属性<h2 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h2>浏览器遇到<img>标签时，需要进行特殊处理：浏览器必须先接收图像，然后才能在该页面上显示图像。<br>alt属性：一小段描述图像的文字，当图像不能显示时，用这一小段叙述代替原有的图像。<h2 id="CSS-1"><a href="#CSS-1" class="headerlink" title="CSS"></a>CSS</h2>使用选择符+内容来定义样式<br>若要使某类的元素拥有同一个样式，使用一个句点，并且接一个类名，则这个规则会适用于该类内的所有成员。<br>常用规则：<br><strong>font-family</strong> 定义网页中的字体<br><strong>font-size</strong> 控制字体的大小<br><strong>color</strong> 文本的颜色<br><strong>font-weight</strong> 设置字体<h3 id="盒模式"><a href="#盒模式" class="headerlink" title="盒模式"></a>盒模式</h3>Box-Model<br>padding（补白）——&gt;border（边框）——&gt;margin（边界）<h3 id="div与span"><a href="#div与span" class="headerlink" title="div与span"></a>div与span</h3>div：用于划分页面，并改变块区样式。借助div，将页面划分为几个合理逻辑结构，有助于网页结构的清晰和样式化。<br>块元素的默认宽度是auto，也就是说会延伸到所有空间。<br>可以定义块的事迹大小，也可以定义百分数。如果使用百分数，则是元素所在的容器（可以是<body>、<div>）<h3 id="根据状态样式化元素"><a href="#根据状态样式化元素" class="headerlink" title="根据状态样式化元素"></a>根据状态样式化元素</h3><h2 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h2>使用流布局：<br>浏览器用<strong>流</strong>来布置页面上的HTML元素，它从HTML文件的开头开始，从头到尾跟着元素的流显示它遇到的每个元素。<br>当两个浏览器并排放置两个内联元素，且这些元素都有边界时，会将两个元素的边界加起来显示。<br>当浏览器并列放置两个块元素时，它把共同的边界重叠到一起，重叠边界的高度是最大边界的值。<h2 id="表格与表单"><a href="#表格与表单" class="headerlink" title="表格与表单"></a>表格与表单</h2><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table></table><br>使用<tr>创建表格中的行，<th>创建表头，</th><td>创建表格中的内容。<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3>textarea：可以输入多行文字，并使用rows和cols定义文本区域的高度与宽度。<br>select：为网页创建菜单空间，菜单提供了在一组选项中选择的方式，select与option共同创建一个菜单。</td></tr></div></body></a></li>
+</ul>
+</dd></dt></dl></ol></li>
+</ol>
+</li></q></blockquote></q></blockquote></a></em></q></li></ul></ol></blockquote></p></li></ol>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/Node/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ygria">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孤光自照">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/11/Node/" itemprop="url">
+                  Node
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T18:32:53+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>哈哈哈哈<br>哈哈哈哈<br>hh<br>哈哈哈哈哈哈哈<br>哈哈哈哈哈哈哈哈哈哈哈哈</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/JavaScript学习笔记（1）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ygria">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孤光自照">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/11/JavaScript学习笔记（1）/" itemprop="url">
+                  JavaScript学习笔记（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T17:32:15+08:00">
                 2018-04-11
               </time>
             
@@ -330,7 +578,7 @@
           
             <p>写在前面：<br>不管容易还是简单<br>总要尝试才知道答案</p>
 <h2 id="JavaScript初探"><a href="#JavaScript初探" class="headerlink" title="JavaScript初探"></a>JavaScript初探</h2><p>JavaScript：<strong>轻量级脚本语言</strong>，是可插入HTML页面的编程代码。<br>将JavaScript插入HTML页面后，可由所有的现代浏览器执行。</p>
-<h2 id="对变量进行声明"><a href="#对变量进行声明" class="headerlink" title="对变量进行声明"></a>对变量进行声明</h2><p>var mood,age;<br>var mood;<br>var age;<br>var mood = “happy”;<br>var age = 33;<br>var mood = “happy”,age = 33;<br>JavaScript不需要进行类型声明，因此它时一种<strong>弱类型（weekly typed）</strong></p>
+<h2 id="对变量进行声明"><a href="#对变量进行声明" class="headerlink" title="对变量进行声明"></a>对变量进行声明</h2><p>```javascript<br>var mood,age;<br>var mood;<br>var age;<br>var mood = “happy”;<br>var age = 33;<br>var mood = “happy”,age = 33;<br>```<br>JavaScript不需要进行类型声明，因此它时一种<strong>弱类型（weekly typed）</strong></p>
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>单引号与双引号毫无区别，若字符串中包含单引号，则一般使用双引号。<br>var mood = “don’t ask”;<br>若要使用单引号，则需要对特殊符号进行<strong>转义</strong>：<br>var mood = ‘don\‘t ask’;<br>作为一个好的编程习惯，<strong>不管选择用双引号还是单引号，都应当在整个脚本中保持一致</strong>。</p>
 <h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><p>如果想给一个变量赋数值，不用限定它必须是一个整数，JavaScript允许使用带小数点的数值，并且允许任意位小数，这样的数成为浮点数（floating-point number）：<br>var age = 33.25;<br>var temperature = -20;<br>var temperature = -20.3333333</p>
 <h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p>另一种重要的数据类型时布尔（boolean）类型<br>var sleeping = true;<br>var married = true;</p>
@@ -340,8 +588,9 @@
 <h2 id="nodeType"><a href="#nodeType" class="headerlink" title="nodeType"></a>nodeType</h2><p>nodeType属性总共有12种可选值，但其中仅有3种，它们是：元素节点（1），属性节点（2），文本节点（3）。</p>
 <h2 id="学习JavaScript-前端应当注意："><a href="#学习JavaScript-前端应当注意：" class="headerlink" title="学习JavaScript/前端应当注意："></a>学习JavaScript/前端应当注意：</h2><h3 id="平稳退化"><a href="#平稳退化" class="headerlink" title="平稳退化"></a>平稳退化</h3><p>借鉴CSS，在禁用了JavaScript的情况下也能正确显示</p>
 <h3 id="合理分离"><a href="#合理分离" class="headerlink" title="合理分离"></a>合理分离</h3><p>将JavaScript与表现分离</p>
-<h3 id="向后兼容"><a href="#向后兼容" class="headerlink" title="向后兼容"></a>向后兼容</h3><h3 id="性能考虑"><a href="#性能考虑" class="headerlink" title="性能考虑"></a>性能考虑</h3><h2 id="同源协议"><a href="#同源协议" class="headerlink" title="同源协议"></a>同源协议</h2><h3 id="定义及用处"><a href="#定义及用处" class="headerlink" title="定义及用处"></a>定义及用处</h3><p><strong>协议相同</strong><br><strong>域名相同</strong><br><strong>端口相同</strong><br>用途：信息安全</p>
-<h3 id="限制范围"><a href="#限制范围" class="headerlink" title="限制范围:"></a>限制范围:</h3><p>（1）Cookie、LocalStorage、IndexDB无法读取<br>（2）DOM无法获得<br>（3）AJAVX请求不能发送</p>
+<h3 id="向后兼容"><a href="#向后兼容" class="headerlink" title="向后兼容"></a>向后兼容</h3><h3 id="性能考虑"><a href="#性能考虑" class="headerlink" title="性能考虑"></a>性能考虑</h3><h2 id="同源协议"><a href="#同源协议" class="headerlink" title="同源协议"></a>同源协议</h2><h3 id="定义及用处"><a href="#定义及用处" class="headerlink" title="定义及用处"></a>定义及用处</h3><p>协议相同<br>域名相同<br>端口相同<br>用途：信息安全</p>
+<h3 id="限制范围"><a href="#限制范围" class="headerlink" title="限制范围:"></a>限制范围:</h3><p>（1）Cookie、LocalStorage、IndexDB无法读取<br>（2）DOM无法获得<br>（3）AJAX请求不能发送</p>
+<h2 id="CSS-DOM"><a href="#CSS-DOM" class="headerlink" title="CSS-DOM"></a>CSS-DOM</h2><h3 id="三位一体的网页"><a href="#三位一体的网页" class="headerlink" title="三位一体的网页"></a>三位一体的网页</h3><p>我们在浏览器中看到的网页其实是由</p>
 
           
         
@@ -798,7 +1047,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
