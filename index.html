@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="ygira.cn 个人博客">
+<meta name="description" content="ygria.cn 个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="孤光自照">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="孤光自照">
-<meta property="og:description" content="ygira.cn 个人博客">
+<meta property="og:description" content="ygria.cn 个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="孤光自照">
-<meta name="twitter:description" content="ygira.cn 个人博客">
+<meta name="twitter:description" content="ygria.cn 个人博客">
 
 
 
@@ -241,6 +241,169 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/CICD  Jenkins & Gitlab集成WebHook触发构建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ygria">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/mw690/006q0KrOjw8f4rmlgoyjgj30kv0lewgi.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孤光自照">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2020/06/04/CICD  Jenkins & Gitlab集成WebHook触发构建/" itemprop="url">
+                  CICD  Jenkins & Gitlab集成WebHook触发构建
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T23:02:25+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在上一篇博客中，我们学习了<code>Jenkins</code>的搭建和插件+流水线的基本使用方法，<code>Jenkins</code>极大地提升了部署效率。<br>最近想学习一下如何集成<code>GitLab webhook</code>，实现进一步解放双手，目标：</p>
+<ul>
+<li>推送（<code>git push</code>）触发构建</li>
+<li>推送到指定分支触发构建</li>
+<li>根据<code>commit</code>的文件，结合<code>mvn -pl</code>指令，实现部分增量构建，并记录<code>commit</code>信息</li>
+</ul>
+<p>推送事件也可以换成<code>Tag push events</code>、<code>Merge request events</code>等其他触发条件，根据需要自由选择。</p>
+<h1 id="基础实现"><a href="#基础实现" class="headerlink" title="基础实现"></a>基础实现</h1><p>使用<code>Gitlab Hook Plugin</code>，并在Jenkins和GitLab中分别配置。</p>
+<h2 id="下载并配置插件"><a href="#下载并配置插件" class="headerlink" title="下载并配置插件"></a>下载并配置插件</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTM1M2U0ZjEwZjU0MGZjM2QucG5n?x-oss-process=image/format,png" alt="下载安装Gitlab Hook Plugin"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTIxOTMwZGI5MmNkZTcyMGIucG5n?x-oss-process=image/format,png" alt="在Jenkins Job中配置"></p>
+<h2 id="在GitLab中配置"><a href="#在GitLab中配置" class="headerlink" title="在GitLab中配置"></a>在<code>GitLab</code>中配置</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLWJjNWU4ZWMwOWE3NDU5ZDIucG5n?x-oss-process=image/format,png" alt="在Gitlab中配置"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTEwNzMyYzNlMDBiZGEwNDQucG5n?x-oss-process=image/format,png" alt="在Jenkins配置中配置允许访问"></p>
+<p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-OamaMgBQ-1591281001642)(<a href="https://upload-images.jianshu.io/upload_images/6810620-9db94d3d3098de57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">https://upload-images.jianshu.io/upload_images/6810620-9db94d3d3098de57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a>)]</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLWQ0MDBlZGQ0MTJmYjRiZTEucG5n?x-oss-process=image/format,png" alt="出现如图所示提醒，配置成功！"></p>
+<p><strong>至此，目标中的前两条，推送构建和推送到指定分支构建实现！</strong></p>
+<h1 id="进阶实现"><a href="#进阶实现" class="headerlink" title="进阶实现"></a>进阶实现</h1><p>从上述过程，我们也可以看出，<code>WebHook</code>的本质就是从<code>GitLab</code>发了一条请求，<code>Jenkins</code>配置了一个终端地址（<code>endpoint</code>）来接收，从而实现了两个步骤的串联。<br>这个请求实质上就是一条<code>HTTP POST</code>请求。<br>相信接触过服务互相调用的小伙伴们都不陌生。有了请求体，我们自然可以拿到自己想要的东西，进行进一步的处理了。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTdiMjNhZDQ4YmJmZjEyNjcucG5n?x-oss-process=image/format,png" alt="请求体内容"></p>
+<h2 id="Jenkins插件-Generic-WebHook-Trigger-Pugin"><a href="#Jenkins插件-Generic-WebHook-Trigger-Pugin" class="headerlink" title="Jenkins插件:Generic WebHook Trigger Pugin"></a>Jenkins插件:Generic WebHook Trigger Pugin</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTY1ZDdlNWVkYWM1YTliZDIucG5n?x-oss-process=image/format,png" alt="下载并配置Generic WebHook Trigger Pugin"><br>从插件简介来看，支持接收任何一个<code>HTTP</code>请求，当然也包括接收<code>GitLab</code>发送的请求。</p>
+<h3 id="在Jenkins-Job中配置接收地址"><a href="#在Jenkins-Job中配置接收地址" class="headerlink" title="在Jenkins Job中配置接收地址"></a>在<code>Jenkins Job</code>中配置接收地址</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLWZlN2I0YTBmYjVhYzMzNDQucG5n?x-oss-process=image/format,png" alt="构建触发器配置"></p>
+<h3 id="配置鉴权token"><a href="#配置鉴权token" class="headerlink" title="配置鉴权token"></a>配置鉴权token</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTA4MDllODVjMDI3Y2M0ZjYucG5n?x-oss-process=image/format,png" alt="在Jenkins用户管理中配置鉴权token"></p>
+<p>我直接使用<code>admin</code>帐号创建，在发送请求时需要携带此token。</p>
+<h3 id="GitLab配置"><a href="#GitLab配置" class="headerlink" title="GitLab配置"></a>GitLab配置</h3><p>在Gitlab中的配置与上文相同，格式为：<br><code>http://admin:${token}@${JENKINS_IP}:${PORT}/generic-webhook-trigger/invoke</code><br>填上刚刚配置生成的<code>token</code>和自己的<code>Jenkins</code>地址和端口即可。<br>同样可以使用自带的测试来测试连接，返回200成功。</p>
+<ul>
+<li>如果返回<code>404</code>，看配置的地址是否有误</li>
+<li>返回<code>403</code>，查看权限配置是否有误<br><strong>至此，连接建立成功！</strong></li>
+</ul>
+<h1 id="编写流水线脚本"><a href="#编写流水线脚本" class="headerlink" title="编写流水线脚本"></a>编写流水线脚本</h1><p>关于如何使用声明式流水线，上一次的博客已有所介绍。这里主要说明如何加入触发器语法。</p>
+<h2 id="流水线触发器语法"><a href="#流水线触发器语法" class="headerlink" title="流水线触发器语法"></a>流水线触发器语法</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLTg5MWI3MDE0ZDE4NDdkN2QucG5n?x-oss-process=image/format,png" alt="从JSONPath中获取参数"><br>要从请求体中拿到所需要的参数，可以通过配置获取JSONPath参数实现。</p>
+<p>在流水线中加入下列语句，<strong>即可当作变量在流水线脚本中使用。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">triggers &#123;</span><br><span class="line">       GenericTrigger(</span><br><span class="line">           genericVariables: [</span><br><span class="line">             [key: &apos;branch&apos;, value: &apos;$.ref&apos;],</span><br><span class="line">             [key:&apos;commitText&apos;, value:&apos;$.commits&apos;]</span><br><span class="line">           ],</span><br><span class="line">           causeString: &apos;Triggered on $branch&apos; ,</span><br><span class="line">           printContributedVariables: false,</span><br><span class="line">           printPostContent: false</span><br><span class="line">       )</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>序列化JSON<br>要想在pipeline脚本中将字符串反序列化成JSON对象，可以引入 <code>Pipeline Utility Step</code>插件，该插件提供了一些工具方法。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82ODEwNjIwLWIyOWM2YjcyOGJhM2NiZDIucG5n?x-oss-process=image/format,png" alt="Pipeline Utility Step"></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def commits = readJSON text: commitText</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>流水线脚本使用<code>Groovy</code>语言，该语言基于<code>Java</code>编写，也集成了一些有趣的特性。在IDEA中编写只需要配置<code>Groovy Library</code>即可。</p>
+</blockquote>
+<h2 id="核心方法"><a href="#核心方法" class="headerlink" title="核心方法"></a>核心方法</h2><ul>
+<li>根据commits，定义patternMap，匹配到指定正则文件格式，构建指定组件。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    def modifiedFile = [];</span><br><span class="line">    for (commit in commits) &#123;</span><br><span class="line">            modifiedFile.addAll(commit.getAt(&quot;added&quot;).findAll())</span><br><span class="line">            modifiedFile.addAll(commit.getAt(&quot;modified&quot;).findAll())</span><br><span class="line">            modifiedFile.addAll(commit.getAt(&quot;removed&quot;).findAll())</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        def buildComponents = new HashSet();</span><br><span class="line">        def patternMap = [&apos;mark-engine-manager/.*&apos;: &apos;manager&apos;, &apos;mark-tools/.*&apos;: &apos;web&apos;,&apos;mark-engine-dm/.*&apos;:&apos;dm&apos;,&apos;mark-engine-web/.*&apos;:&apos;web&apos;,</span><br><span class="line">        &apos;mark-engine-uc/.*&apos;:&apos;uc&apos;,&apos;mark-engine-gateway/.*&apos;:&apos;gateway&apos;];</span><br><span class="line">//遍历所有修改了的文件</span><br><span class="line">        for (file in modifiedFile) &#123;</span><br><span class="line">            for(entry in patternMap.entrySet())&#123;</span><br><span class="line">                if (file ==~ entry.key) &#123;</span><br><span class="line">                    buildComponents &lt;&lt; entry.value;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>根据需要构建的组件，拼接<code>maven</code>构建指令。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String mvnCmd = &apos;mvn clean install -Dmaven.test.skip=true&apos;</span><br><span class="line">for(component in buildComponents)&#123;</span><br><span class="line">      mvnCmd = mvnCmd + &apos; -pl mark-engine-&apos;+component+&apos;,&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>经过调试和测试push，三个目标全部完成。</strong></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>一切都是代码</strong>，CICD当然也可以使用代码实现。经过实践我们可以探索出Jenkins更多有趣的玩法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -944,7 +1107,7 @@
                alt="Ygria" />
           <p class="site-author-name" itemprop="name">Ygria</p>
            
-              <p class="site-description motion-element" itemprop="description">ygira.cn 个人博客</p>
+              <p class="site-description motion-element" itemprop="description">ygria.cn 个人博客</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -952,7 +1115,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -965,7 +1128,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1007,7 +1170,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
